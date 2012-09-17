@@ -68,13 +68,14 @@ Remotes.io currently supports the following touch events/gestures:
 
 ### The Remotes.io event object:
 
-All gesture events provide:
+The gesture events "tap" and "hold" provide:
 
 - position.x: X co-ordinate of the gesture starting touch (px)
 - position.y: Y co-ordinate of the gesture starting touch (px)
 - sourceWidth: Width of the source broswer window (px)
 - sourceHeight: Height of the source broswer window (px)
 
+(the other events don't have a specific position attached to them)
 
 ### Requirements
 Host: Google Chrome Browser (remotes.io currently requires the installation of a Google Chrome Extension)
