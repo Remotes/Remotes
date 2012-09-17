@@ -30,17 +30,17 @@ Want to add your site? Contact us via [Email](mailto:developers@remotes.io)
 
 A step by step guide on how to use remotes.io:
 
-* [Download the remotes.io javascript](https://raw.github.com/Remoats/Remoats/zipball/master) or clone the latest version from our github repository:
+* [Download the remotes.io javascript](https://raw.github.com/Remotes/Remotes/zipball/master) or clone the latest version from our GitHub repository:
 
-```$ git clone git@github.com:Remoats/Remoats.git```
+```$ git clone git@github.com:Remotes/Remotes.git```
 
 * Import jquery and import remotes.io in your project:
     
-```<script type="text/javascript" src="https://raw.github.com/Remoats/Remoats/master/dist/api.client.js"></script>```
+```<script type="text/javascript" src="https://raw.github.com/Remotes/Remotes/master/dist/remotes.min.js"></script>```
 
 * Control! Create a new Remotes object with the preview API key:
 
-```var Remotes = new Remoats("1234567890");```
+```var Remotes = new Remotes("preview");```
 
 Now, on every gesture that is performed on the remote touch device creates an event, and you'll receive a callback object with information on the gesture.
 
@@ -137,4 +137,4 @@ If you've tested remotes.io on a different device, please let us know.
 Created by [Philip Nuzhnyy](http://twitter.com/callmephilip).
 Contributions by [Timothée Boucher](http://twitter.com/_timothee) and [Matt Campbell](http://twitter.com/just_matt)
 
-Add your feature suggestions and bug reports on [Github](http://github.com/Remoats/Remoats/issues).
+Add your feature suggestions and bug reports on [GitHub](http://github.com/Remotes/Remotes/issues).
