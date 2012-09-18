@@ -1,11 +1,12 @@
 # Remotes.io
 
-## Control any web object remotely using Javascript
+## Control any web page remotely using Javascript
 
-Remotes.io is a javascript library that can be used to control webpages remotely using gestures on a touch device. It supports the following gestures:
+Remotes.io is a javascript library that can be used to control webpages remotely using gestures on a touch device. It currently supports the following gestures:
 
 - Tap
 - Hold
+- Release
 - Swipe
 
 
@@ -15,32 +16,30 @@ Remotes.io is a javascript library that can be used to control webpages remotely
 Here are some cool ways you can use Remotes.io
 
 ### Slideshow Presentation
-A slideshow that uses Remotes.io to switch slides. [Check it out](http://remotes.io/slideshow-presentation/)
+A slideshow that uses Remotes.io to switch slides. [Check it out](https://dl.dropbox.com/u/9224326/www/presentation/index.html)
 
 ### Soundcloud Player
-A Soundcloud player that uses Remotes.io to change tracks and control playback. [Check it out](http://remotes.io/soundcloud-player/)
+A Soundcloud player that uses Remotes.io to change tracks and control playback. [Check it out](https://dl.dropbox.com/u/9224326/www/soundcloud/index.html)
 
-### PacMan
-It's PacMan! [Check it out](http://remotes.io/pacman/)
-
-Want to add your site? Contact us via [Email](mailto:developers@remotes.io)
+Want to add your site? [Say hello](mailto:hello@remotes.io)
 
 
 ## Documentation
 
 A step by step guide on how to use remotes.io:
 
-* [Download the remotes.io javascript](https://raw.github.com/Remotes/Remotes/zipball/master) or clone the latest version from our GitHub repository:
+* Link to the latest Remotes build from your page
 
-```$ git clone git@github.com:Remotes/Remotes.git```
+```
+<script type="text/javascript" src="https://raw.github.com/Remotes/Remotes/master/dist/remotes.min.js"></script>
 
-* Import jquery and import remotes.io in your project:
-    
-```<script type="text/javascript" src="https://raw.github.com/Remotes/Remotes/master/dist/remotes.min.js"></script>```
+```
+
+* [Here's a gist you can copy and paste to get started](https://gist.github.com/3741349).
 
 * Control! Create a new Remotes object with the preview API key:
 
-```var Remotes = new Remotes("preview");```
+```var remotes = new Remotes("preview");```
 
 Now, on every gesture that is performed on the remote touch device creates an event, and you'll receive a callback object with information on the gesture.
 
@@ -51,12 +50,12 @@ You can add event handler by using the 'on' method, and remove them using the 'o
 A single event can have mutliple handlers associated with it.
 To remove an event handler, you must pass the event-name and the same callback function you wish to unbind, like so:
 
-``` Remotes.off( "gesture-name", function(event){ // Handle your business }); ```
+``` remotes.off( "gesture-name", function(event){ // Handle your business }); ```
 	
 
 Remotes.io currently supports the following touch events/gestures:
 
-	Remotes
+	remotes
 	    .on("swipe-left", ...) 		// A touch and swipe in the leftward direction
 		.on("swipe-right", ...)		// A touch and swipe in the rightward direction
 		.on("swipe-up", ...) 		// A touch and swipe in the upward direction
