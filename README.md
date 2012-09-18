@@ -71,8 +71,8 @@ The gesture events "tap" and "hold" provide:
 
 - position.x: X co-ordinate of the gesture starting touch (px)
 - position.y: Y co-ordinate of the gesture starting touch (px)
-- sourceWidth: Width of the source broswer window (px)
-- sourceHeight: Height of the source broswer window (px)
+- sourceWidth: Width of the source browser window (px)
+- sourceHeight: Height of the source browser window (px)
 
 (the other events don't have a specific position attached to them)
 
@@ -134,7 +134,4 @@ Not all gestures are supported on every device. This matrix shows the support we
 If you've tested remotes.io on a different device, please let us know.
 
 ## Further notes
-Created by [Philip Nuzhnyy](http://twitter.com/callmephilip).
-Contributions by [Timothée Boucher](http://twitter.com/_timothee) and [Matt Campbell](http://twitter.com/just_matt)
-
-Add your feature suggestions and bug reports on [GitHub](http://github.com/Remotes/Remotes/issues).
+Remotes are built by [Philip Nuzhnyy](http://twitter.com/callmephilip), [Timothée Boucher](http://twitter.com/_timothee) and [Matt Campbell](http://twitter.com/just_matt)
