@@ -1602,12 +1602,18 @@ define('oats/ApiSpecification',[], function(){
 			
 			CLIENT_REGISTER : "oats.client.register",
 			CLIENT_REGISTERED : "oats.client.registered", 
-
-			all : [ this.CLIENT_REGISTER, this.CLIENT_REGISTERED ]
+			CLIENT_SYNCED : "oats.client.synced",
+			CLIENT_OUT_OF_SYNC : "oats.client.out_of_sync"
  		},
 
  		isValidSignal : function(signal){
-			return [this.signals.CLIENT_REGISTER, this.signals.CLIENT_REGISTERED].indexOf(signal) !== -1;
+			return [
+					this.signals.CLIENT_REGISTER, 
+					this.signals.CLIENT_REGISTERED,
+					this.signals.CLIENT_SYNCED,
+					this.signals.CLIENT_OUT_OF_SYNC
+			].indexOf(signal) !== -1;
+			
 		}
 
 	};
@@ -1747,7 +1753,15 @@ define('oats/Client',[ "underscore",
 
 						switch(data.signal){
 							case ApiSpecification.signals.CLIENT_REGISTERED:
-								this.trigger("Ready");
+								this.trigger("ready");
+								break;
+
+							case ApiSpecification.signals.CLIENT_SYNCED:
+								this.trigger("synced");
+								break;
+
+							case ApiSpecification.signals.CLIENT_OUT_OF_SYNC:
+								this.trigger("out-of-sync");
 								break;
 						}
 
