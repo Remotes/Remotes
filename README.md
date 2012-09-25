@@ -8,8 +8,8 @@ Remotes.io is a javascript library that can be used to control webpages remotely
 - Hold
 - Release
 - Swipe
-
-
+- Zoom In (pinch)
+- Zoom Out (pinch)
 
 ## Demo's
 
