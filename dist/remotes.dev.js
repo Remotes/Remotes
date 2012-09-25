@@ -1622,15 +1622,15 @@ define('oats/ApiSpecification',[], function(){
 define('settings',[], function(){
 	return {
 		applicationKey : "1234567890",
-		authenticationCheckUrl : "http://www.remotes.io/auth/check/",
-		channelResolutionUrl : "http://www.remotes.io/auth/channel/resolve/",
-		pusherAuthEndpoint : 'http://www.remotes.io/pusher/auth/', 
+		authenticationCheckUrl : "http://localhost:5566/auth/check/",
+		channelResolutionUrl : "http://localhost:5566/auth/channel/resolve/",
+		pusherAuthEndpoint : 'http://localhost:5566/pusher/auth/', 
 		pusherApplicationKey : "0b6ee8539603f52808dd",
-		actionEventName : "client-action",	
-		loginUrl : "http://www.remotes.io/auth/login/",
-		installationWidgetUrl : "http://www.remotes.io/widgets/install/",
+		actionEventName : "client-action",
+		loginUrl : "http://localhost:5566/auth/login/",
+		installationWidgetUrl : "http://localhost:5566/widgets/install/",
 		extensionCheckTimeout : 3000,
-		debug : false
+		debug : true
 	};
 });
 define('oats/ClientBootstrap',["oats/ApiSpecification","settings"], function(ApiSpecification, settings){
