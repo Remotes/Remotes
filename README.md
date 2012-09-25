@@ -50,11 +50,12 @@ You can add event handler by using the 'on' method, and remove them using the 'o
 A single event can have mutliple handlers associated with it.
 To remove an event handler, you must pass the event-name and the same callback function you wish to unbind, like so:
 
-``` remotes.off( "gesture-name", function(event){ // Handle your business }); ```
+``` remotes.off( "gesture-name", ); ```
 	
 
 Remotes.io currently supports the following touch events/gestures:
 
+```
 	remotes
 	    .on("swipe-left", ...) 		// A touch and swipe in the leftward direction
 		.on("swipe-right", ...)		// A touch and swipe in the rightward direction
@@ -63,7 +64,17 @@ Remotes.io currently supports the following touch events/gestures:
 		.on("tap", ...) 			// A quick tap/touch and release
 		.on("hold", ...) 			// A touch lasting at least 500ms in one location
 		.on("release", ...); 		// Fired when a 'Hold' event touch ends
+		.on("zoom-in", ...); 		// Fired when a user zooms in using pinch
+		.on("zoom-out", ...); 		// Fired when a user zooms out using pinch
+```
 
+Additionally you get access to synchronization events:
+
+```
+	remotes
+		.on("synced", ...)          // Remote control if synced with the page
+		.on("out-of-sync", ...)     // Page lost sync with a remote control
+```
 
 ### The Remotes.io event object:
 
