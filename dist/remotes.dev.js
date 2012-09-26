@@ -1592,7 +1592,9 @@ define('oats/ApiSpecification',[], function(){
 			"swipe-down",
 			"tap",
 			"hold",
-			"release"
+			"release",
+			"zoom-in",
+			"zoom-out"
 			// "drag-start",
 			// "drag-end",
 			// "dragging",
