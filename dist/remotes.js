@@ -1560,7 +1560,8 @@ define('oats/Channels/LocalReceiver',["underscore","oats/Events"], function(_,Ev
 	function LocalReceiver(){
 		var that = this;
 		window.addEventListener("message", _.bind(function(event) {
-			if (event.source != window) return;
+			// TODO: add a way to verify where the message comes from
+			//if (event.source != window) return;
 
 			if(localMessageFilter(event.data)){
 				var data = timestampData(event.data,"t_dispatch_rcvd");
@@ -1592,7 +1593,9 @@ define('oats/ApiSpecification',[], function(){
 			"swipe-down",
 			"tap",
 			"hold",
-			"release"
+			"release",
+			"zoom-in",
+			"zoom-out"
 			// "drag-start",
 			// "drag-end",
 			// "dragging",
@@ -1629,6 +1632,7 @@ define('settings',[], function(){
 		actionEventName : "client-action",	
 		loginUrl : "http://www.remotes.io/auth/login/",
 		installationWidgetUrl : "http://www.remotes.io/widgets/install/",
+		syncWidgetUrl : "http://www.remotes.io/widgets/sync/",
 		extensionCheckTimeout : 3000,
 		debug : false
 	};
@@ -1691,6 +1695,9 @@ define('oats/ClientBootstrap',["oats/ApiSpecification","settings"], function(Api
 		check : function(){
 			var that = this;
 			setTimeout(function(){
+				// new Widget(settings.syncWidgetUrl).render();
+				// that.registerClient();
+				// that.onReady();
 				if(isExtensionInstalled()){
 					new Widget(getWidgetUrl()).render();
 					

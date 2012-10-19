@@ -1695,17 +1695,17 @@ define('oats/ClientBootstrap',["oats/ApiSpecification","settings"], function(Api
 		check : function(){
 			var that = this;
 			setTimeout(function(){
-				// new Widget(settings.syncWidgetUrl).render();
-				// that.registerClient();
-				// that.onReady();
-				if(isExtensionInstalled()){
-					new Widget(getWidgetUrl()).render();
+				new Widget(settings.syncWidgetUrl).render();
+				that.registerClient();
+				that.onReady();
+				// if(isExtensionInstalled()){
+				// 	new Widget(getWidgetUrl()).render();
 					
-					that.registerClient();
-					that.onReady();
-				} else {
-					new Widget(settings.installationWidgetUrl).render();
-				}
+				// 	that.registerClient();
+				// 	that.onReady();
+				// } else {
+				// 	new Widget(settings.installationWidgetUrl).render();
+				// }
 			}, settings.extensionCheckTimeout);
 		},
 
