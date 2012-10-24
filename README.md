@@ -31,7 +31,7 @@ A step by step guide on how to use remotes.io:
 * Link to the latest Remotes build from your page
 
 ```
-<script type="text/javascript" src="https://raw.github.com/Remotes/Remotes/master/dist/remotes.min.js"></script>
+<script src="https://raw.github.com/Remotes/Remotes/master/dist/remotes.ne.min.js"></script>
 
 ```
 
