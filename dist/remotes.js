@@ -1418,7 +1418,7 @@ define("underscore", (function (global) {
 
 
 
-define('oats/Events',["underscore"], function(_){
+define('oats/events',["underscore"], function(_){
 
 	// event dispatcher is stolen from Backbone.js
 
@@ -1536,7 +1536,7 @@ define('oats/Events',["underscore"], function(_){
 	return Events;
 
 });
-define('oats/Channels/LocalReceiver',["underscore","oats/Events"], function(_,Events){
+define('oats/Channels/local.receiver',["underscore","oats/events"], function(_,Events){
 
 	var localMessageFilter = function(message){ return message.destination === "oats"; };
 
@@ -1578,7 +1578,7 @@ define('oats/Channels/LocalReceiver',["underscore","oats/Events"], function(_,Ev
 
 	return LocalReceiver;
 });
-define('oats/ApiSpecification',[], function(){
+define('oats/api.specification',[], function(){
 
 	return {
 
@@ -1632,12 +1632,14 @@ define('settings',[], function(){
 		actionEventName : "client-action",	
 		loginUrl : "http://www.remotes.io/auth/login/",
 		installationWidgetUrl : "http://www.remotes.io/widgets/install/",
+		widgetRegistrationUrl : "http://www.remotes.io/extension/register/",
 		syncWidgetUrl : "http://www.remotes.io/widgets/sync/",
+		controllerUrl : "http://www.remotes.io/c/",
 		extensionCheckTimeout : 3000,
 		debug : false
 	};
 });
-define('oats/ClientBootstrap',["oats/ApiSpecification","settings"], function(ApiSpecification, settings){
+define('oats/client.bootstrap',["oats/api.specification","settings"], function(ApiSpecification, settings){
 
 	function isExtensionInstalled(){
 		return document.getElementById("remoats-plugin-installed") != null;
@@ -1695,17 +1697,17 @@ define('oats/ClientBootstrap',["oats/ApiSpecification","settings"], function(Api
 		check : function(){
 			var that = this;
 			setTimeout(function(){
-				// new Widget(settings.syncWidgetUrl).render();
-				// that.registerClient();
-				// that.onReady();
-				if(isExtensionInstalled()){
-					new Widget(getWidgetUrl()).render();
+				new Widget(settings.syncWidgetUrl).render();
+				that.registerClient();
+				that.onReady();
+				// if(isExtensionInstalled()){
+				// 	new Widget(getWidgetUrl()).render();
 					
-					that.registerClient();
-					that.onReady();
-				} else {
-					new Widget(settings.installationWidgetUrl).render();
-				}
+				// 	that.registerClient();
+				// 	that.onReady();
+				// } else {
+				// 	new Widget(settings.installationWidgetUrl).render();
+				// }
 			}, settings.extensionCheckTimeout);
 		},
 
@@ -1720,11 +1722,11 @@ define('oats/ClientBootstrap',["oats/ApiSpecification","settings"], function(Api
 
 	return Bootstrap;
 });
-define('oats/Client',[ "underscore", 
-		 "oats/Events",
-		 "oats/Channels/LocalReceiver", 
-		 "oats/ApiSpecification",
-		 "oats/ClientBootstrap"
+define('oats/client',[ "underscore", 
+		 "oats/events",
+		 "oats/Channels/local.receiver", 
+		 "oats/api.specification",
+		 "oats/client.bootstrap"
 		 ], function(_, Events, Receiver, ApiSpecification, ClientBootstrap){
 		
 
@@ -1786,5 +1788,5 @@ define('oats/Client',[ "underscore",
 		return Client;
 
 	}
-);    return require("oats/Client");
+);    return require("oats/client");
 }));
