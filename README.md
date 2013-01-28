@@ -145,4 +145,4 @@ Not all gestures are supported on every device. This matrix shows the support we
 If you've tested remotes.io on a different device, please let us know.
 
 ## Further notes
-Remotes are built by [Philip Nuzhnyy](http://twitter.com/callmephilip), [Timothée Boucher](http://twitter.com/_timothee) and [Hyacinthe Briand](https://twitter.com/hyacinthe)
+Remotes are built by [Philip Nuzhnyy](https://twitter.com/callmephilip), [Timothée Boucher](https://twitter.com/_timothee) and [Hyacinthe Briand](https://twitter.com/hyacinthe)
