@@ -16,7 +16,7 @@ Remotes.io is a javascript library that can be used to control webpages remotely
 Here are some cool ways you can use Remotes.io
 
 ### Slideshow Presentation
-A slideshow that uses Remotes.io to switch slides. [Check it out](https://dl.dropbox.com/u/9224326/www/presentation/index.html)
+A slideshow that uses Remotes.io to switch slides. [Check it out](http://dl.dropbox.com/u/9224326/www/presentation/index.html)
 
 ### Soundcloud Player
 A Soundcloud player that uses Remotes.io to change tracks and control playback. [Check it out](https://dl.dropbox.com/u/9224326/www/soundcloud/index.html)
